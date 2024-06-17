@@ -71,9 +71,12 @@ pygame.mixer.init(2048)
 '''
 
 #Training file 68 distance
-face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+# face_cascade = cv2.CascadeClassifier("haarcascades/haarcascade_frontalface_default.xml")
+
+face_cascade = cv2.CascadeClassifier("./haarcascades/haarcascade_frontalface_default.xml")
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape68coordinates/shape_predictor_68_face_landmarks.dat")
+# predictor = dlib.shape_predictor("shape68coordinates/shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("./shape68coordinates/shape_predictor_68_face_landmarks.dat")
 
 
 #Imutils library
@@ -132,7 +135,7 @@ while(True):
 
 
     # scale of cam output
-    frame = sc.rescale_frame(frame, percent=40)
+    frame = sc.rescale_frame(frame, percent=100)
 
     #Framee mistake
     #เขียนรวมล่างได้แต่อยากเเยกเพื่อความสบายใจของเซฟ โอเคนะ
